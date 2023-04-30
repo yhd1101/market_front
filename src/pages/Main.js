@@ -24,7 +24,7 @@ const Main = () => {
 
     return (
         <>
-        <Carousel>
+        <Carousel nextLabel={""} prevLabel={""}>
             <Carousel.Item>
                 <img
                     className="d-block w-100"

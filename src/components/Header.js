@@ -9,7 +9,7 @@ const Header = () => {
                     <Navbar.Brand href="#home">KoreaMarket</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
+                        <Nav className="ml-auto">
 
                         </Nav>
                         <Nav>
@@ -26,7 +26,7 @@ const Header = () => {
                             </NavDropdown>
                             <Nav.Link href="#deets">부동산</Nav.Link>
                             <Nav.Link href="#deets">구인구직</Nav.Link>
-                            <Nav.Link href="#deets">로그인</Nav.Link>
+                            <Nav.Link href="/login">로그인</Nav.Link>
 
                         </Nav>
                     </Navbar.Collapse>
