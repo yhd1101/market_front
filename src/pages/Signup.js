@@ -1,8 +1,12 @@
 import React, {useState} from 'react';
 import {Button, Col, Container, Form, Row} from "react-bootstrap";
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
 // e..preventDefault() 반복 동작을 막아줌
 
 const Signup = () => {
+
+    const navigate = useNavigate()
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -17,7 +21,11 @@ const Signup = () => {
             const userInput = {
                 name, email, password
             }
-            console.log(userInput)
+            const {data, status } = await axios.post("http://localhost:9000/user/signup", userInput)
+            console.log(data)
+            if (status === 200) {
+                navigate("/login")
+            }
         } catch (err) {
             console.log(err)
         }

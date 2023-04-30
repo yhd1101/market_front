@@ -1,8 +1,12 @@
 import React, {useState} from 'react';
 import {Button, Col, Container, Form, Nav, Row} from "react-bootstrap";
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
+
 // row 칸으로 나눠줌
 
 const Login = () => {
+    const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
@@ -12,7 +16,12 @@ const Login = () => {
             const userInput = {
                 email, password
             }
-            console.log(userInput)
+            const {data, status} = await axios.post("http://localhost:9000/user/login", userInput)
+            console.log(data)
+            if (status === 200){
+                localStorage.setItem("token", data.token.toString())
+                navigate("/profile")
+            }
 
         } catch (err){
             console.log(err)
