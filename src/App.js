@@ -9,7 +9,7 @@ const App = () => {
         <div>
             <Header />
             <RouterProvider router={router}/>
-            <Footer />
+            {/*<Footer />*/}
 
         </div>
     );
